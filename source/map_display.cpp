@@ -2509,7 +2509,7 @@ void MapPopupMenu::Update() {
 					Append(MAP_POPUP_MENU_SELECT_GROUND_BRUSH, "Select Groundbrush", "Uses the current item as a groundbrush");
 				}
 
-				if (hasCollection || topSelectedItem && topSelectedItem->hasCollectionBrush() || tile->getGroundBrush() && tile->getGroundBrush()->hasCollection()) {
+				if (hasCollection || (topSelectedItem && topSelectedItem->hasCollectionBrush()) || (tile->getGroundBrush() && tile->getGroundBrush()->hasCollection())) {
 					Append(MAP_POPUP_MENU_SELECT_COLLECTION_BRUSH, "Select Collection", "Use this collection");
 				}
 
@@ -2537,7 +2537,7 @@ void MapPopupMenu::Update() {
 					Append(MAP_POPUP_MENU_SELECT_GROUND_BRUSH, "Select Groundbrush", "Uses the current tile as a groundbrush");
 				}
 
-				if (hasCollection || tile->getGroundBrush() && tile->getGroundBrush()->hasCollection()) {
+				if (hasCollection || (tile->getGroundBrush() && tile->getGroundBrush()->hasCollection())) {
 					Append(MAP_POPUP_MENU_SELECT_COLLECTION_BRUSH, "Select Collection", "Use this collection");
 				}
 

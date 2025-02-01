@@ -363,7 +363,7 @@ void Materials::addToTileset(std::string tilesetName, int itemId, TilesetCategor
 bool Materials::isInTileset(Item* item, std::string tilesetName) const {
 	const ItemType& it = g_items[item->getID()];
 
-	return it.id != 0 && (isInTileset(it.brush, tilesetName) || isInTileset(it.doodad_brush, tilesetName) || isInTileset(it.raw_brush, tilesetName)) || isInTileset(it.collection_brush, tilesetName);
+	return (it.id != 0 && (isInTileset(it.brush, tilesetName) || isInTileset(it.doodad_brush, tilesetName) || isInTileset(it.raw_brush, tilesetName))) || isInTileset(it.collection_brush, tilesetName);
 }
 
 bool Materials::isInTileset(Brush* brush, std::string tilesetName) const {
